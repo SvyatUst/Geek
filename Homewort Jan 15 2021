@@ -1,0 +1,33 @@
+import Foundation
+
+
+print("калькулятор для решения квадратного уравнения вида a*(x^2) + b*x + c = 0")
+
+print("введите a")
+
+var a: Double = Double (readLine() ?? "введите значения a")!
+print("a = \(a), правильно?" )
+  
+print("введите b")
+var b: Double = Double (readLine() ?? "введите значения a")!
+print("b = \(b), правильно?" )
+
+print("введите c")
+var c: Double = Double (readLine() ?? "введите значения a")!
+print("с = \(c), правильно?" )
+
+var d: Double = Double (b*b - 4*a*c)
+if d > 0
+    {
+        let x1: Double = Double (-b - sqrt(b*b - 4*a*c)) / Double(-2*a)
+        print("x1=", x1)
+    
+        let x2: Double = Double (-b + sqrt(b*b - 4*a*c)) / Double(-2*a)
+        print("x2=", x2)
+    }
+else
+    {
+        
+     print("Уравнение не является квадратным")
+        
+    }
