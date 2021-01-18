@@ -1,0 +1,23 @@
+import Foundation
+
+
+print(" калькулятор для поиска площади, суммы сторон и гипотенузы прямоугольного треугольника)
+
+print("введите a")
+
+var a: Double = Double (readLine() ?? "ввести длину катета")!
+print("длина a = \(a), правильно?" )
+  
+print("введите длину катета b")
+var b: Double = Double (readLine() ?? "введите значения a")!
+print("длина b = \(b), правильно?" )
+
+
+let hypotenuse: Double = sqrt (pow (b, 2) + pow(a, 2))
+      print ("hypotenuse", hypotenuse)
+  
+let square: Double = a*b*0.5
+print ("square", square)
+
+let length: Double = (a+b)*2
+print ("length", length)
