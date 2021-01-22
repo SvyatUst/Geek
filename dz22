@@ -1,0 +1,50 @@
+//1. Написать функцию, которая определяет, четное число или нет.
+import Foundation
+let x = 6
+
+if x % 2 == 0 {
+    print("чётное")
+}
+else{
+    print ("нечётное")
+}
+
+
+
+//2. Написать функцию, которая определяет, четное число или нет.
+import Foundation
+let x = 6
+
+if x % 3 == 0 {
+    print("делится на 3 без остатка")
+}
+else{
+    print ("не делится без остатка")
+}
+
+//3. Создать возрастающий массив из 100 чисел.
+import Foundation
+
+var Hundred: Array<Int> = []
+for i in 1...100{
+    Hundred.append(i)
+}
+print(Hundred)
+
+
+//4. Удалить из этого массива все четные числа и все числа, которые не делятся на 3.
+import Foundation
+
+var array = Array (1...100)
+
+for value in array {
+    if (value % 2) == 0 {
+    array.remove(at: array.firstIndex(of: value)!)
+    }
+}
+for value in array {
+    if (value % 3) == 0 {
+        array.remove(at: array.firstIndex(of: value)!)
+    }
+}
+print( "array =", array )
