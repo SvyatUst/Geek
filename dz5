@@ -1,0 +1,69 @@
+import UIKit
+
+enum windows{
+    case open
+    case closed
+}
+enum engine{
+    case on
+    case off
+}
+enum luggage{
+    case Full
+    case ninety
+    case eighty
+    case seventy
+    case sixty
+    case fifty
+    case fourty
+    case thirty
+    case twenty
+    case Empty
+}
+
+
+protocol Car {
+    var brand: String {get}
+    var releaseyear: Int {get set}
+    var engineState: engine {get set}
+    var windowsState: windows {get set}
+}
+extension Car {
+    mutating func changeEngineState(engineState: engine){
+        self.engineState = engineState
+    }
+    mutating func chageWindowsState(windowsState: windows){
+        self.windowsState = windowsState
+    }
+}
+class basicCar: Car{
+    var brand: String
+    var releaseyear: Int
+    var engineState: engine = .off
+    var windowsState: windows = .closed
+    init(brand: String, release: Int) {
+        self.brand = brand
+        self.releaseyear = release
+    }
+}
+class sportCar: basicCar, CustomStringConvertible{
+    var description: String{
+        return "engine is \(engineState), windows is \(windowsState), release date is \(releaseyear)"
+    }
+}
+class trunkCar: basicCar, CustomStringConvertible{
+    var trunkState: luggage = .fourty
+    var description: String{
+        return "engine is \(engineState), windows is \(windowsState), trunk is \(trunkState), release date is \(releaseyear)"
+    }
+}
+
+
+
+var toyota = sportCar(brand: "Тойота", release: 1983)
+var kamaz = trunkCar(brand: "Камаз", release: 2003)
+toyota.changeEngineState(engineState: .on)
+kamaz.chageWindowsState(windowsState: .open)
+kamaz.trunkState = .Empty
+print(toyota.description)
+print(kamaz.description)
